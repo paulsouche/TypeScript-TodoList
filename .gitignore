@@ -1,0 +1,28 @@
+# OS X
+*.DS_Store
+._*
+
+# IDE
+.idea/
+.vscode/
+
+#npm bower
+node_modules/
+vendor/
+typings/
+
+#Front Build Files
+client/js/
+client/css/
+client/fonts/
+src/**/*.js
+src/**/*.ktp.ts
+src/**/*.map
+.sass-cache
+.tmp
+.tscache
+build
+
+#reports
+reports/
+coverage/

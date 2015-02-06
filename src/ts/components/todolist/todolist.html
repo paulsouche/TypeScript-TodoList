@@ -1,0 +1,25 @@
+<section class="todo-list">
+  <form role="form" [ng-form-model]="todoForm" class="form-horizontal">
+    <div class="form-group">
+      <div class="col-xs-3">
+        <label class="control-label">
+          Description du Todo
+        </label>
+      </div>
+      <div class="col-xs-7">
+        <input ng-control="description" type="text" [(ng-model)]="newTodo.description" class="form-control">
+      </div>
+      <div class="col-xs-2">
+        <button class="btn btn-success" (click)="addTodo()" [disabled]="!todoForm.valid">
+          Ajouter le Todo
+        </button>
+      </div>
+    </div>
+  </form>
+  <ul class="list-group">
+    <li *ng-for="#todo of todos;#i = index" class="list-group-item todo">
+      <a [router-link]="['/TodoDetail',{id:todo.id}]">{{todo.description}}</a>
+      <i class="glyphicon glyphicon-remove pull-right" (click)="removeTodo(todo)"></i>
+    </li>
+  </ul>
+</section>
