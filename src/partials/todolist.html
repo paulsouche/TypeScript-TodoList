@@ -1,0 +1,27 @@
+<section class="todo-list">
+   <form role="form" name="todoForm" class="form-horizontal">
+      <div class="form-group">
+         <div class="col-xs-3">
+            <label class="control-label">
+               Description du Todo
+            </label>
+         </div>
+         <div class="col-xs-7">
+            <input name="description" type="text" ng-model="todolist.newTodo.description" class="form-control" required>
+         </div>
+         <div class="col-xs-2">
+            <button class="btn btn-success" ng-click="todolist.createTodo()" ng-disabled="todoForm.description.$invalid">
+               Ajouter le Todo
+            </button>
+         </div>
+      </div>
+   </form>
+   <ul class="list-group">
+      <li ng-repeat="todo in todolist.todos track by todo.id"
+          class="list-group-item todo">
+         <a ng-href="#/todo/{{::todo.id}}" ng-bind="todo.description"></a>
+         <i class="glyphicon glyphicon-remove pull-right"
+            ng-click="todolist.removeTodo(todo)"></i>
+      </li>
+   </ul>
+</section>
